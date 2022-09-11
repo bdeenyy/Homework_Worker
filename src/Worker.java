@@ -1,4 +1,4 @@
-public class Worker implements OnTaskDoneListener, OnTaskErrorListener {
+public class Worker {
     private final OnTaskDoneListener callback;
     private final OnTaskErrorListener errorCallback;
 
@@ -15,15 +15,5 @@ public class Worker implements OnTaskDoneListener, OnTaskErrorListener {
                 errorCallback.onError("Task " + i + " is error");
             }
         }
-    }
-
-    @FunctionalInterface
-    public interface OnTaskErrorListener {
-        void onError(String result);
-    }
-
-    @FunctionalInterface
-    public interface OnTaskDoneListener {
-        void onDone(String result);
     }
 }
